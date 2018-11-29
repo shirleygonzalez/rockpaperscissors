@@ -24,14 +24,43 @@ $("#shoot").click(function(){
      var randomAnswer;
      randomAnswer= Math.random();
      if (randomAnswer <.33){
-        $("#computerChoice").text("Rock");}
+        $("#computerChoice").text("Rock");
+         computerChoice = "Rock";
+     }
     else if(randomAnswer<.66){
-        $("#computerChoice").text("Paper");}
-    else {
-        $("computerChoice").text("Scissor")
+        $("#computerChoice").text("Paper");
+         computerChoice = "Paper";
     }
+    else {
+        $("#computerChoice").text("Scissor");
+        computerChoice ="Scissor";
+    }
+
+console.log(userChoice)
+console.log(computerChoice)
+
+if (
+    ((userChoice==="rock")&&(computerChoice==="Rock"))||
+    ((userChoice==="paper")&&(computerChoice==="Paper"))||
+    ((userChoice==="scissor")&&(computerChoice==="Scissor"))
+    ){
+    $("#message").text("Tie");
+}
+else if (((userChoice==="rock")&&(computerChoice==="Paper"))||
+    ((userChoice==="paper")&&(computerChoice==="Scissor"))||
+    ((userChoice==="scissor")&&(computerChoice==="Rock"))
+    ){
+    $("#message").text("Computer Wins");
+}
+else if(((userChoice==="rock")&&(computerChoice==="Scissor"))||
+    ((userChoice==="paper")&&(computerChoice==="Rock"))||
+    ((userChoice==="scissor")&&(computerChoice==="Paper"))
+    ){
+    $("#message").text("User Wins ");
+}
 
 
 });
+
 
 
